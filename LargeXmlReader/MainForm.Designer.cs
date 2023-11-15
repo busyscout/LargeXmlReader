@@ -169,6 +169,11 @@ namespace LargeXmlReader
             0,
             0,
             0});
+            this.numSampleOffset.Minimum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            -2147483648});
             this.numSampleOffset.Name = "numSampleOffset";
             this.numSampleOffset.Size = new System.Drawing.Size(121, 23);
             this.numSampleOffset.TabIndex = 3;
@@ -217,7 +222,7 @@ namespace LargeXmlReader
             this.txtFilter.Size = new System.Drawing.Size(239, 23);
             this.txtFilter.TabIndex = 4;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
@@ -238,7 +243,7 @@ namespace LargeXmlReader
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "LargeXmlReader";
             ((System.ComponentModel.ISupportInitialize)(this.numElementsCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSampleOffset)).EndInit();

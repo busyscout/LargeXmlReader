@@ -83,11 +83,13 @@ namespace LargeXmlReader
             }
             txtResult.Text = null;
             var offset = (int)numSampleOffset.Value;
+            var isOffsetFromStart = offset >= 0;
             var bytesToRead = (int)numSampleBytes.Value;
             using (var fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
             {
                 var buffer = new byte[bytesToRead];
-                var byteCount = fs.Read(buffer, offset, bytesToRead);
+                fs.Seek(offset, isOffsetFromStart ? SeekOrigin.Begin : SeekOrigin.End);
+                var byteCount = fs.Read(buffer, 0, bytesToRead);
                 txtResult.Text = Encoding.UTF8.GetString(buffer, 0, byteCount);
             }
         }
